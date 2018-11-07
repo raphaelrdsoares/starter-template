@@ -4,15 +4,17 @@ Starter Template provê um template com estrutura inicial para um projeto básic
 
 ## Incluso
  
+As dependências que estão inclusas no package.json são 
+
 | Dependência | Versão |
 | ------ | ------ |
-| [Bootstrap] | v4.1.3 | 
-| JQuery | v3.3.1 | 
-| Font Awesome | v5.5.0 | 
-| Material Icons | 
-| Google Fonts: Raleway |
-| Reset CSS | v4.0.1 | 
-| Gulp | v3.9.1 | 
+| [Bootstrap][Bootstrap] | v4.1.3 | 
+| [JQuery][JQuery] | v3.3.1 | 
+| [Font Awesome][FontAwesome] | v5.5.0 | 
+| [Material Icons][MaterialIcons] | 
+| [Google Fonts: Raleway][GoogleFonts_Raleway] |
+| [Reset CSS][ResetCSS] | v4.0.1 | 
+| [Gulp][Gulp] | v3.9.1 | 
 
 ## Executando
 
@@ -29,7 +31,11 @@ MIT
 
 **Free Software, Hell Yeah!**
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.
-
 
 [Bootstrap]: <https://getbootstrap.com/>
+[JQuery]: <https://jquery.com/>
+[FontAwesome]: <https://fontawesome.com/>
+[MaterialIcons]: <https://material.io/tools/icons/?style=baseline>
+[GoogleFonts_Raleway]: <https://fonts.google.com/specimen/Raleway?selection.family=Raleway>
+[ResetCSS]: <http://meyerweb.com/eric/tools/css/reset/>
+[Gulp]: <https://gulpjs.com/>
