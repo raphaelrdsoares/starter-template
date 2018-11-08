@@ -1,7 +1,7 @@
 {
     "name": "project-structure",
     "version": "1.0.0",
-    "description": "Estrutura inicial de um projeto front-end",
+    "description": "Template com estrutura inicial para um projeto básico front-end utilizando npm",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
