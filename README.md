@@ -2,6 +2,13 @@
 
 Starter Template provê um template com estrutura inicial para um projeto básico front-end utilizando npm.
 
+## Pendências
+
+- Incluir o AngularJS no projeto
+- Colocar um util.css na pasta css (e incluir no index.html) para agregar estilos auxiliares
+- Colocar um util.js na pasta js (e incluir no index.html) para agregar funções auxiliares 
+- Ver como fazer pra usar o font-awesome no projeto sem precisar do node_modules (talvez mover o arquivo font-awesome.css pra a pasta css)
+
 ## Incluso
 
 As dependências que estão inclusas no package.json são
