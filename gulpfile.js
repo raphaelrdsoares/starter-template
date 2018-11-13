@@ -22,6 +22,7 @@ const useref = require("gulp-useref");
 const del = require("del");
 const runSequence = require("run-sequence");
 const imagemin = require("gulp-imagemin");
+const zip = require("gulp-zip");
 
 // ================= BUILD TASKS ====================
 gulp.task("clean", function() {
@@ -44,8 +45,20 @@ gulp.task("useref", function() {
 		.pipe(gulp.dest("dist"));
 });
 
+gulp.task("font-awesome", function() {
+	//para o font-awesome
+	return gulp.src("node_modules/@fortawesome/fontawesome-free/webfonts/*").pipe(gulp.dest("dist/webfonts"));
+});
+
+gulp.task("zip-dist", () =>
+	gulp
+		.src("dist/*")
+		.pipe(zip("dist.zip"))
+		.pipe(gulp.dest("dist"))
+);
+
 gulp.task("build", function(callback) {
-	runSequence("clean", ["useref", "images"], callback);
+	runSequence("clean", ["useref", "font-awesome", "images"], "zip-dist", callback);
 });
 
 // ================= DEVELOPMENT TASKS ====================
