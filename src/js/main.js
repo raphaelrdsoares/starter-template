@@ -1,4 +1,4 @@
-/**
+/**!
  * ---------------------------------------------------
  * Starter Template - Um template com estrutura inicial para um projeto básico front-end.
  *
@@ -18,7 +18,9 @@ db.version(1).stores({
 db.open(); */
 
 // Descomentar o código abaixo case seja usado AngularJS (v1.x)
-/* angular.module("app", ["cgNotify"]).controller("Controller", [
+/* 
+var app = angular.module("app", ["cgNotify"]);
+angular.module("app", ["cgNotify"]).controller("Controller", [
 	"$scope",
 	"$sce",
 	"$http",
