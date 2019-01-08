@@ -27,12 +27,14 @@ const htmlmin = require("gulp-htmlmin");
 
 // ================= BUILD TASKS ====================
 gulp.task("clean", function() {
-	return del[("dist", { force: true })];
+	return del(["dist/**/*", "dist/", "dist.zip"]).then(paths => {
+		console.log("Deleted files and folders:\n", paths.join("\n"));
+	});
 });
 
 gulp.task("images", function() {
 	return gulp
-		.src("src/**/*.+(png|jpg|gif|svg)")
+		.src("src/**/*.+(png|jpg|jpeg|gif|svg)")
 		.pipe(imagemin())
 		.pipe(gulp.dest("dist/"));
 });
@@ -69,7 +71,7 @@ gulp.task("zip-dist", () =>
 );
 
 gulp.task("build", function(callback) {
-	runSequence("clean", ["useref", "font-awesome", "images"], "zip-dist", callback);
+	runSequence("clean", "useref", "font-awesome", "images", "zip-dist", callback);
 });
 
 // ================= DEVELOPMENT TASKS ====================
@@ -84,4 +86,11 @@ gulp.task("browserSync", function() {
 
 gulp.task("start", ["browserSync"], function() {
 	gulp.watch("src/**/*.*", browserSync.reload);
+});
+
+// ImageMagick precisa estar instalado (https://www.imagemagick.org/script/download.php)
+gulp.task("img-resize", function() {
+	gulp.src("src/images/home.jpg")
+		.pipe(imageResize({ /* width: 600,  */ quality: 0.8, imageMagick: true }))
+		.pipe(gulp.dest("src"));
 });
