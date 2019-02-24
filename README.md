@@ -4,11 +4,8 @@ Starter Template provê um template com estrutura inicial para um projeto básic
 
 ## Pendências
 
-- Incluir o AngularJS no projeto
-- Colocar um util.css na pasta css (e incluir no index.html) para agregar estilos auxiliares
-- Colocar um util.js na pasta js (e incluir no index.html) para agregar funções auxiliares 
-- Ver como fazer pra usar o font-awesome no projeto sem precisar do node_modules (talvez mover o arquivo font-awesome.css pra a pasta css)
-- Alterar o menu pra dispositivos móveis pra usar um sidebar menu
+-   Incluir o AngularJS no projeto
+-   Alterar o menu pra dispositivos móveis pra usar um sidebar menu
 
 ## Incluso
 
