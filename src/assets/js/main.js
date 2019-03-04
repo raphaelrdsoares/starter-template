@@ -17,19 +17,7 @@ db.version(1).stores({
 });
 db.open(); */
 
-// Descomentar o código abaixo case seja usado AngularJS (v1.x)
-/* 
-var app = angular.module("app", ["cgNotify"]);
-angular.module("app", ["cgNotify"]).controller("Controller", [
-	"$scope",
-	"$sce",
-	"$http",
-	"notify",
-	function($scope, $sce, $http, notify) {
-		function init() {}
-		init();
-	}
-]); */
+
 
 // Descomentar o código abaixo caso seja usado JQuery
 /* $(document).ready(function() {}); */
