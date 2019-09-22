@@ -26,61 +26,56 @@ const zip = require("gulp-zip");
 const htmlmin = require("gulp-htmlmin");
 
 // ================= BUILD TASKS ====================
-gulp.task("clean", function () {
+gulp.task("clean", function() {
 	return del(["dist/**/*", "dist/", "dist.zip"]).then(paths => {
 		console.log("Deleted files and folders:\n", paths.join("\n"));
 	});
 });
 
-gulp.task("images", function () {
+gulp.task("images", function() {
 	return gulp
 		.src("src/**/*.+(png|jpg|jpeg|gif|svg)")
 		.pipe(imagemin())
 		.pipe(gulp.dest("dist/"));
 });
 
-gulp.task("useref", function () {
+gulp.task("useref", function() {
 	return gulp
 		.src("src/*.html")
 		.pipe(useref())
-		.pipe(gulpIf("*.js", minify({
-			noSource: true,
-			ext: {
-				min: ".js"
-			}
-		}))) // Minifies only if it's a JavaScript file
-		.pipe(gulpIf("*.css", cssnano())) // Minifies only if it's a CSS file
 		.pipe(
 			gulpIf(
-				"*.html",
-				htmlmin({
-					collapseWhitespace: true,
-					removeComments: true,
-					removeEmptyAttributes: true
+				"*.js",
+				minify({
+					noSource: true,
+					ext: {
+						min: ".js"
+					}
 				})
 			)
-		) // Minifies only if it's a HTML file
+		) // Minifies only if it's a JavaScript file
+		.pipe(gulpIf("*.css", cssnano())) // Minifies only if it's a CSS file
 		.pipe(gulp.dest("dist"));
 });
 
-gulp.task("font-awesome", function () {
+gulp.task("font-awesome", function() {
 	//para o font-awesome
 	return gulp.src("node_modules/@fortawesome/fontawesome-free/webfonts/*").pipe(gulp.dest("dist/webfonts"));
 });
 
 gulp.task("zip-dist", () =>
 	gulp
-	.src("dist/**/*")
-	.pipe(zip("dist.zip"))
-	.pipe(gulp.dest("./"))
+		.src("dist/**/*")
+		.pipe(zip("dist.zip"))
+		.pipe(gulp.dest("./"))
 );
 
-gulp.task("build", function (callback) {
+gulp.task("build", function(callback) {
 	runSequence("clean", "useref", "font-awesome", "images", "zip-dist", callback);
 });
 
 // ================= DEVELOPMENT TASKS ====================
-gulp.task("browserSync", function () {
+gulp.task("browserSync", function() {
 	return browserSync({
 		server: {
 			baseDir: ["./", "./src"]
@@ -89,17 +84,19 @@ gulp.task("browserSync", function () {
 	});
 });
 
-gulp.task("start", ["browserSync"], function () {
+gulp.task("start", ["browserSync"], function() {
 	gulp.watch("src/**/*.*", browserSync.reload);
 });
 
 // ImageMagick precisa estar instalado (https://www.imagemagick.org/script/download.php)
-gulp.task("img-resize", function () {
+gulp.task("img-resize", function() {
 	gulp.src("src/images/home.jpg")
-		.pipe(imageResize({
-			/* width: 600,  */
-			quality: 0.8,
-			imageMagick: true
-		}))
+		.pipe(
+			imageResize({
+				/* width: 600,  */
+				quality: 0.8,
+				imageMagick: true
+			})
+		)
 		.pipe(gulp.dest("src"));
 });
