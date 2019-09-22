@@ -17,11 +17,11 @@
 		<!-- Descomentar caso seja necessário autorefresh a cada X segundos <meta http-equiv="refresh" content="X"> -->
 
 		<!-- favicon profissional gerado com https://realfavicongenerator.net/ -->
-		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
-		<link rel="manifest" href="images/favicon/site.webmanifest" />
-		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#383b43" />
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+		<link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+		<link rel="mask-icon" href="assets/img/favicon/safari-pinned-tab.svg" color="#383b43" />
 		<meta name="msapplication-TileColor" content="#383b43" />
 		<meta name="theme-color" content="#ffffff" />
 
@@ -42,11 +42,12 @@
 		<link type="text/css" rel="stylesheet" href="../node_modules/reset-css/reset.css" />
 		<link type="text/css" rel="stylesheet" href="../node_modules/@cgross/angular-notify/dist/angular-notify.css" />
 		<link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
-		<link type="text/css" rel="stylesheet" media="screen" href="css/main.css" />
+		<link type="text/css" rel="stylesheet" media="screen" href="assets/css/main.css" />
+		<link type="text/css" rel="stylesheet" media="screen" href="assets/css/util.css" />
 		<!-- endbuild -->
 	</head>
 
-	<body ng-controller="Controller">
+	<body>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<a class="navbar-brand" href="#">Navbar</a>
 			<button
@@ -72,23 +73,7 @@
 		</nav>
 
 		<main role="main" class="container">
-			<div class="starter-template">
-				<h1>Starter Template</h1>
-				<p class="lead">
-					Use this template as a way to quickly start any new front-end project.<br />
-					All you get is this text and a mostly barebones HTML, CSS and JS document.
-				</p>
-				<p>
-					See more in
-					<a
-						href="https://github.com/raphaelrdsoares/starter-template"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						https://github.com/raphaelrdsoares/starter-template
-					</a>
-				</p>
-			</div>
+			<main-component></main-component>
 		</main>
 		<!-- /. container -->
 
@@ -97,10 +82,14 @@
 		<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
 		<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 		<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="../node_modules/@cgross/angular-notify/dist/angular-notify.js"></script>
 		<script type="text/javascript" src="../node_modules/dexie/dist/dexie.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-		<script type="text/javascript" src="js/mainController.js"></script>
+		<script type="text/javascript" src="app/app.module.js"></script>
+		<script type="text/javascript" src="app/app.routes.js"></script>
+		<script type="text/javascript" src="app/components/main/main.controller.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/util.js"></script>
 		<!-- endbuild -->
 	</body>
 </html>
