@@ -23,7 +23,6 @@ const del = require("del");
 const runSequence = require("run-sequence");
 const imagemin = require("gulp-imagemin");
 const zip = require("gulp-zip");
-const htmlmin = require("gulp-htmlmin");
 
 // ================= BUILD TASKS ====================
 gulp.task("clean", function() {
@@ -82,6 +81,13 @@ gulp.task("browserSync", function() {
 		},
 		port: 8080
 	});
+	//* Para servidores já rodando em outra porta, descomentar o código abaixo para habilitar o live reloading
+	// return browserSync.init({
+	// 	proxy: "localhost:80",
+	// 	port: 8080
+	// 	// open: true,
+	// 	// notify: false
+	// });
 });
 
 gulp.task("start", ["browserSync"], function() {
