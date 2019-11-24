@@ -23,7 +23,6 @@ const del = require("del");
 const runSequence = require("run-sequence");
 const imagemin = require("gulp-imagemin");
 const zip = require("gulp-zip");
-const htmlmin = require("gulp-htmlmin");
 
 // ================= BUILD TASKS ====================
 gulp.task("clean", function() {
